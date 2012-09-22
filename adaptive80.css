@@ -1,0 +1,88 @@
+/*	Adaptive80 responsive layout css framework (based on Less Framework)
+	by Hafiz Rahman
+
+	Every column is 80 pixels. Thanks to box-sizing: border-box, there's no need to worry about paddings.
+	Every column is 60px for content and 10px margin-left and 10px margin-right.
+
+	Media queries:
+	1. Default Layout	12 columns	: 80 * 12 	= 960
+	2. Tablet Layout	8 columns	: 80 * 8 	= 640
+	3. Mobile Layout 	4 columns 	: 80 * 4	= 320
+	4. Wide Mob. Layout	6 columns	: 80 * 6 	= 480
+
+	Column guidelines
+	------------------
+	All: margin-left: 10px; margin-right: 10px;
+
+	col 	1		2		3		4		5		6		7		8		9		10		11		12
+	---------------------------------------------------------------------------------------------------
+	width 	60		140		220		300		380		460		540		620		700		780		860		940				
+
+*/
+
+
+/*	Normalize
+	------	*/
+
+@import: url("normalize.css");
+
+/*	The secret sauce
+	Read more at http://paulirish.com/2012/box-sizing-border-box-ftw/
+	------	*/
+
+* { box-sizing: border-box }
+
+
+/*		Default Layout: 960px. 
+		Allowed columns: 12px.
+		Gutters: 10px.
+		Outer margins: 5px.
+		Leftover space for scrollbars @1024px: 64px.
+-----------------------------------------------------------------------------*/
+body {
+	width: 960px;
+	margin: 0 auto;
+	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+}
+
+/*		Tablet Layout: 640px.
+		Allowed columns: 8
+		Inherits styles from: Default Layout.
+---------------------------------------------------------------*/
+
+@media only screen and (min-width: 640px) and (max-width: 959px) {
+	
+	body {
+		width: 640px;
+	}
+}
+
+
+
+/*		Mobile Layout: 320px.
+		Allowed columns: 4
+		Inherits styles from: Default Layout.
+----------------------------*/
+
+@media only screen and (max-width: 639px) {
+	
+	body {
+		width: 320px;
+	}
+	
+}
+
+
+
+/*		Wide Mobile Layout: 480px.
+		Allowed columns: 6
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------*/
+
+@media only screen and (min-width: 480px) and (max-width: 639px) {
+	
+	body {
+		width: 480px;
+	}
+	
+}
